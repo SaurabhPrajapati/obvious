@@ -67,7 +67,13 @@ extension PhotoListViewModel {
 }
 
 extension PhotoListViewModel {
-    func showDetail(_ item: PhotoViewModel?) {
-        
+    func showDetail(_ viewModel: PhotoViewModel?) {
+        guard
+            let viewModel = viewModel else {
+            return
+        }
+
+        let detailViewController = PhotoDetailViewController(viewModel: viewModel)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

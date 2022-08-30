@@ -20,7 +20,6 @@ class PhotoListCell: UICollectionViewCell, Reusable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        indicatorView.hidesWhenStopped = true
     }
 
     func setup(_ viewModel: PhotoViewModel) {

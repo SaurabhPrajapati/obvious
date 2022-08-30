@@ -47,6 +47,9 @@ class PhotoListViewController: UIViewController {
     }
     
     private func setupCollectionView() {
+        collectionView.hero.isEnabled = true
+        collectionView.heroModifiers = [.cascade]
+        
         PhotoListCell.registerNib(to: collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -65,6 +68,7 @@ extension PhotoListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoListCell.reuseIdentifier, for: indexPath) as! PhotoListCell
         cell.setup(viewModel.getPhotoViewModel(atIndex: indexPath.item))
+        cell.heroModifiers = [.fade]
         return cell
     }
 }
