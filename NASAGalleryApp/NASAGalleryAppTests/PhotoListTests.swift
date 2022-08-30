@@ -34,4 +34,27 @@ class PhotoListTests: XCTestCase {
             XCTFail(error.localizedDescription)
         }
     }
+    
+    func testCNumberOfItems() {
+        let viewModel = PhotoListViewModel()
+        
+        do {
+            let photos = try viewModel.fetchPhotos()
+            XCTAssertTrue(viewModel.numberOfItems(inSection: 0) == photos.count, "Number of items not matched with number of photos")
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    func testDgetPhotoModel() {
+        let viewModel = PhotoListViewModel()
+        
+        do {
+            let photos = try viewModel.fetchPhotos()
+            let photoModelTitle = viewModel.getPhotoViewModel(atIndex: 0).getTitle()
+            XCTAssertTrue(photoModelTitle == photos.first?.title, "Wrong photo item model generated")
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
 }
