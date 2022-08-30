@@ -33,3 +33,13 @@ class PhotoListViewModel: JSONContentParser {
         return photos
     }
 }
+
+extension PhotoListViewModel {
+    func numberOfItems(inSection section: Int) -> Int {
+        return photos?.count ?? 0
+    }
+    
+    func getPhotoViewModel(atIndex index: Int) -> PhotoViewModel {
+        return PhotoViewModel(photo: photos?[safe: index])
+    }
+}

@@ -46,3 +46,15 @@ class PhotoListViewController: UIViewController {
         print("Reload UI")
     }
 }
+
+extension PhotoListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfItems(inSection: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoListCell.reuseIdentifier, for: indexPath) as! PhotoListCell
+        cell.setup(viewModel.getPhotoViewModel(atIndex: indexPath.item))
+        return cell
+    }
+}

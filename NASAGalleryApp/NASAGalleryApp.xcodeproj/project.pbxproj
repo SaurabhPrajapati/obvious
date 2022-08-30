@@ -25,6 +25,10 @@
 		AC313D2428B893510037DF72 /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC313D2328B893510037DF72 /* DateFormats.swift */; };
 		AC313D2628B894520037DF72 /* EncoderDecoderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC313D2528B894520037DF72 /* EncoderDecoderProvider.swift */; };
 		AC313D2828B894860037DF72 /* DataParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC313D2728B894860037DF72 /* DataParsingError.swift */; };
+		AC5AAC0228BDC5F2006D7A52 /* PhotoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AAC0028BDC5F2006D7A52 /* PhotoListCell.swift */; };
+		AC5AAC0328BDC5F2006D7A52 /* PhotoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC5AAC0128BDC5F2006D7A52 /* PhotoListCell.xib */; };
+		AC5AAC0528BDC64F006D7A52 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AAC0428BDC64F006D7A52 /* PhotoViewModel.swift */; };
+		AC5AAC0728BDC6A2006D7A52 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AAC0628BDC6A2006D7A52 /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		AC313D2328B893510037DF72 /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		AC313D2528B894520037DF72 /* EncoderDecoderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderDecoderProvider.swift; sourceTree = "<group>"; };
 		AC313D2728B894860037DF72 /* DataParsingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParsingError.swift; sourceTree = "<group>"; };
+		AC5AAC0028BDC5F2006D7A52 /* PhotoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCell.swift; sourceTree = "<group>"; };
+		AC5AAC0128BDC5F2006D7A52 /* PhotoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoListCell.xib; sourceTree = "<group>"; };
+		AC5AAC0428BDC64F006D7A52 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		AC5AAC0628BDC6A2006D7A52 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +175,7 @@
 		AC313D1028B887E40037DF72 /* PhotoList */ = {
 			isa = PBXGroup;
 			children = (
+				AC5AABFD28BDC5BE006D7A52 /* PhotoListCell */,
 				AC313D1128B889F90037DF72 /* PhotoListViewModel.swift */,
 				AC313D0B28B887D60037DF72 /* PhotoListViewController.swift */,
 				AC313D0C28B887D60037DF72 /* PhotoListViewController.xib */,
@@ -189,6 +198,7 @@
 			children = (
 				AC313D2528B894520037DF72 /* EncoderDecoderProvider.swift */,
 				AC313D1528B88A5D0037DF72 /* JSONContentParser.swift */,
+				AC5AAC0628BDC6A2006D7A52 /* Reusable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -216,6 +226,16 @@
 				AC313D2328B893510037DF72 /* DateFormats.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		AC5AABFD28BDC5BE006D7A52 /* PhotoListCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC5AAC0028BDC5F2006D7A52 /* PhotoListCell.swift */,
+				AC5AAC0128BDC5F2006D7A52 /* PhotoListCell.xib */,
+				AC5AAC0428BDC64F006D7A52 /* PhotoViewModel.swift */,
+			);
+			path = PhotoListCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC313CE728B887250037DF72 /* LaunchScreen.storyboard in Resources */,
+				AC5AAC0328BDC5F2006D7A52 /* PhotoListCell.xib in Resources */,
 				AC313D0E28B887D60037DF72 /* PhotoListViewController.xib in Resources */,
 				AC313CE428B887250037DF72 /* Assets.xcassets in Resources */,
 				AC313D1828B88C2D0037DF72 /* data.json in Resources */,
@@ -351,15 +372,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC313D2028B8919B0037DF72 /* Photo.swift in Sources */,
+				AC5AAC0528BDC64F006D7A52 /* PhotoViewModel.swift in Sources */,
 				AC313D1D28B891830037DF72 /* Collection+Safe.swift in Sources */,
 				AC313D2628B894520037DF72 /* EncoderDecoderProvider.swift in Sources */,
 				AC313CDB28B887230037DF72 /* AppDelegate.swift in Sources */,
 				AC313D1228B889F90037DF72 /* PhotoListViewModel.swift in Sources */,
+				AC5AAC0728BDC6A2006D7A52 /* Reusable.swift in Sources */,
 				AC313CDD28B887230037DF72 /* SceneDelegate.swift in Sources */,
 				AC313D0D28B887D60037DF72 /* PhotoListViewController.swift in Sources */,
 				AC313D2828B894860037DF72 /* DataParsingError.swift in Sources */,
 				AC313D2428B893510037DF72 /* DateFormats.swift in Sources */,
 				AC313D1628B88A5D0037DF72 /* JSONContentParser.swift in Sources */,
+				AC5AAC0228BDC5F2006D7A52 /* PhotoListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
