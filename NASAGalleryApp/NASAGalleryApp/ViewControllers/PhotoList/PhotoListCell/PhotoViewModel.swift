@@ -17,4 +17,15 @@ class PhotoViewModel {
     deinit {
         print("Deinit - PhotoViewModel")
     }
+    
+    func getImageURL() -> URL? {
+        guard
+            let urlString = photo?.url
+        else {
+            return nil
+        }
+        return URL(string: urlString)
+    }
+    
+    func getTitle() -> String? { photo?.title }
 }

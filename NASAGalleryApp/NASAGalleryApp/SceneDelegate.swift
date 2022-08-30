@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         configure(window: window)
+        self.window = window
     }
     
     private func configure(window: UIWindow) {

@@ -10,7 +10,7 @@ import Combine
 import UIKit
 
 struct GridSpecs {
-    let numberOfGrids: Int = 2
+    let numberOfGrids: Int = 3
     let interItemSpacing: CGFloat = 16.0
     let lineSpacing: CGFloat = 16.0
 }

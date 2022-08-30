@@ -9,7 +9,7 @@ import Foundation
 struct Photo: Decodable {
     let title: String
     let explanation: String
-    let hdurl: String
+    let hdurl: String?
     let url: String
     let date: Date
     let mediaType: MediaType

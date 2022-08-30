@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoListViewController" customModule="NASAGalleryApp" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="u4i-nj-91O" id="i9T-6x-kCd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="u4i-nj-91O">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="16" y="44" width="382" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oRd-Uc-nuu">
                         <size key="itemSize" width="128" height="128"/>
@@ -32,9 +33,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="u4i-nj-91O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dbu-tr-ALB"/>
+                <constraint firstItem="u4i-nj-91O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Dbu-tr-ALB"/>
+                <constraint firstItem="u4i-nj-91O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fIf-Gj-bSu"/>
                 <constraint firstItem="u4i-nj-91O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jBS-ag-3gG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="u4i-nj-91O" secondAttribute="trailing" id="oa8-w6-PDf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="u4i-nj-91O" secondAttribute="bottom" id="pOp-73-MKA"/>
             </constraints>
             <point key="canvasLocation" x="132" y="91"/>

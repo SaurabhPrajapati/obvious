@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol Reusable {
     static var reuseIdentifier: String { get }
@@ -14,5 +15,11 @@ protocol Reusable {
 extension Reusable {
     static var reuseIdentifier: String {
         return String(describing: self)
+    }
+}
+
+extension Reusable where Self: UICollectionViewCell {
+    static func registerNib(to collectionView: UICollectionView) {
+        collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
 }

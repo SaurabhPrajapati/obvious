@@ -31,6 +31,7 @@
 		AC5AAC0728BDC6A2006D7A52 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AAC0628BDC6A2006D7A52 /* Reusable.swift */; };
 		AC5AAC0A28BDC829006D7A52 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = AC5AAC0928BDC829006D7A52 /* Hero */; };
 		ACF1133328BDD21D001505F0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACF1133228BDD21D001505F0 /* Kingfisher */; };
+		ACF1133528BDD545001505F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1133428BDD545001505F0 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		AC5AAC0128BDC5F2006D7A52 /* PhotoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoListCell.xib; sourceTree = "<group>"; };
 		AC5AAC0428BDC64F006D7A52 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		AC5AAC0628BDC6A2006D7A52 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		ACF1133428BDD545001505F0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				AC313D2228B893480037DF72 /* Constants */,
 				AC313D1B28B891760037DF72 /* Extensions */,
 				AC313D1428B88A4D0037DF72 /* Protocols */,
+				ACF1133428BDD545001505F0 /* Utils.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				AC313D2028B8919B0037DF72 /* Photo.swift in Sources */,
 				AC5AAC0528BDC64F006D7A52 /* PhotoViewModel.swift in Sources */,
 				AC313D1D28B891830037DF72 /* Collection+Safe.swift in Sources */,
+				ACF1133528BDD545001505F0 /* Utils.swift in Sources */,
 				AC313D2628B894520037DF72 /* EncoderDecoderProvider.swift in Sources */,
 				AC313CDB28B887230037DF72 /* AppDelegate.swift in Sources */,
 				AC313D1228B889F90037DF72 /* PhotoListViewModel.swift in Sources */,

@@ -11,6 +11,8 @@ import Hero
 
 class PhotoListViewController: UIViewController {
 
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
     private let viewModel: PhotoListViewModel
     private var reloadDataCancellable: AnyCancellable?
     
@@ -26,6 +28,7 @@ class PhotoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupCollectionView()
         setupListeners()
         
         do {
@@ -41,6 +44,12 @@ class PhotoListViewController: UIViewController {
             .sink(receiveValue: { [weak self] _ in
                 self?.reloadData()
             })
+    }
+    
+    private func setupCollectionView() {
+        PhotoListCell.registerNib(to: collectionView)
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     @MainActor private func reloadData() {
@@ -70,11 +79,11 @@ extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = collectionView.frame.width
         let grids = CGFloat(viewModel.gridSpecs.numberOfGrids)
-        let spacing = (columns - 1) * viewModel.gridSpecs.interItemSpacing
+        let spacing = (grids - 1) * viewModel.gridSpecs.interItemSpacing
         
         // |item-spacing-item|
-        
-        return (collectionViewWidth - spacing)/grids
+        let width = (collectionViewWidth - spacing)/grids
+        return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
