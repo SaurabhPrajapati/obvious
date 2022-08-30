@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Hero
 
 class PhotoListViewController: UIViewController {
 
@@ -56,5 +57,31 @@ extension PhotoListViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoListCell.reuseIdentifier, for: indexPath) as! PhotoListCell
         cell.setup(viewModel.getPhotoViewModel(atIndex: indexPath.item))
         return cell
+    }
+}
+
+extension PhotoListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.showDetail(viewModel.getPhotoViewModel(atIndex: indexPath.item))
+    }
+}
+
+extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let collectionViewWidth = collectionView.frame.width
+        let grids = CGFloat(viewModel.gridSpecs.numberOfGrids)
+        let spacing = (columns - 1) * viewModel.gridSpecs.interItemSpacing
+        
+        // |item-spacing-item|
+        
+        return (collectionViewWidth - spacing)/grids
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return viewModel.gridSpecs.interItemSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return viewModel.gridSpecs.lineSpacing
     }
 }

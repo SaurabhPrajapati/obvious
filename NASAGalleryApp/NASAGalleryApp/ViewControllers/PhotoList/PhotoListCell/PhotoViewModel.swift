@@ -13,4 +13,8 @@ class PhotoViewModel {
     init(photo: Photo?) {
         self.photo = photo
     }
+    
+    deinit {
+        print("Deinit - PhotoViewModel")
+    }
 }

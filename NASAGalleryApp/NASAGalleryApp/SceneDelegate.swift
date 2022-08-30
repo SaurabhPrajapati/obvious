@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -29,10 +30,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.setViewControllers([rootViewController], animated: false)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        
+        viewModel.setNavigationController(navigationController)
     }
     
     private func createNavigationController() -> UINavigationController {
-        return UINavigationController()
+        let navigationController = UINavigationController()
+        navigationController.hero.isEnabled = true
+        navigationController.hero.navigationAnimationType = .auto
+        return navigationController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

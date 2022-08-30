@@ -7,6 +7,13 @@
 
 import Foundation
 import Combine
+import UIKit
+
+struct GridSpecs {
+    let numberOfGrids: Int = 2
+    let interItemSpacing: CGFloat = 16.0
+    let lineSpacing: CGFloat = 16.0
+}
 
 class PhotoListViewModel: JSONContentParser {
     var jsonContentType: JSONContentType { .photos }
@@ -23,6 +30,16 @@ class PhotoListViewModel: JSONContentParser {
     
     private(set) var photos: [Photo]?
     private(set) var reloadData: PassthroughSubject<Void, Never> = PassthroughSubject()
+    private(set) var gridSpecs = GridSpecs()
+    private(set) var navigationController: UINavigationController?
+    
+    deinit {
+        print("Deinit - PhotoListViewModel")
+    }
+    
+    func setNavigationController(_ navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
     
     @discardableResult
     func fetchPhotos() throws -> [Photo] {
@@ -31,6 +48,11 @@ class PhotoListViewModel: JSONContentParser {
         self.photos = photos
         reloadData.send()
         return photos
+    }
+    
+    func setGridSpecifications(_ gridSpecs: GridSpecs) {
+        self.gridSpecs = gridSpecs
+        self.reloadData.send()
     }
 }
 
@@ -41,5 +63,11 @@ extension PhotoListViewModel {
     
     func getPhotoViewModel(atIndex index: Int) -> PhotoViewModel {
         return PhotoViewModel(photo: photos?[safe: index])
+    }
+}
+
+extension PhotoListViewModel {
+    func showDetail(_ item: PhotoViewModel?) {
+        
     }
 }

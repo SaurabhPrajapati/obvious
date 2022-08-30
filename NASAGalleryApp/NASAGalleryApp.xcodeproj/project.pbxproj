@@ -233,9 +233,9 @@
 		AC5AABFD28BDC5BE006D7A52 /* PhotoListCell */ = {
 			isa = PBXGroup;
 			children = (
+				AC5AAC0428BDC64F006D7A52 /* PhotoViewModel.swift */,
 				AC5AAC0028BDC5F2006D7A52 /* PhotoListCell.swift */,
 				AC5AAC0128BDC5F2006D7A52 /* PhotoListCell.xib */,
-				AC5AAC0428BDC64F006D7A52 /* PhotoViewModel.swift */,
 			);
 			path = PhotoListCell;
 			sourceTree = "<group>";
