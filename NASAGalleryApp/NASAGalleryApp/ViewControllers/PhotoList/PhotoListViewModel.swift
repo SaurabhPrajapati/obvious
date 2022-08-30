@@ -67,12 +67,8 @@ extension PhotoListViewModel {
 }
 
 extension PhotoListViewModel {
-    func showDetail(_ viewModel: PhotoViewModel?) {
-        guard
-            let viewModel = viewModel else {
-            return
-        }
-
+    func showDetail(with selectedIndex: Int) {
+        let viewModel = PhotoDetailViewModel(photos: photos, selectedIndex: selectedIndex)
         let detailViewController = PhotoDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(detailViewController, animated: true)
     }

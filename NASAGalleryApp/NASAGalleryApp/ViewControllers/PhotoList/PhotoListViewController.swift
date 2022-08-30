@@ -75,7 +75,7 @@ extension PhotoListViewController: UICollectionViewDataSource {
 
 extension PhotoListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.showDetail(viewModel.getPhotoViewModel(atIndex: indexPath.item))
+        viewModel.showDetail(with: indexPath.item)
     }
 }
 

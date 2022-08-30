@@ -8,14 +8,17 @@
 import UIKit
 import Hero
 import Kingfisher
+import Combine
 
 class PhotoDetailViewController: UIViewController {
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
     
-    private let viewModel: PhotoViewModel
-    init(viewModel: PhotoViewModel) {
+    private let viewModel: PhotoDetailViewModel
+    private var photoCancellable: AnyCancellable?
+    
+    init(viewModel: PhotoDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "PhotoDetailViewController", bundle: nil)
     }
@@ -27,13 +30,22 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupImageView()
+        imageView.hero.isEnabled = true
+        setupListener()
+        addSwipeGestures()
     }
     
-    private func setupImageView() {
-        imageView.hero.isEnabled = true
+    private func setupListener() {
+        photoCancellable = viewModel.$photoModel
+            .receive(on: DispatchQueue.main)
+            .compactMap({ $0 })
+            .sink(receiveValue: { [weak self] viewModel in
+                self?.updateUI(viewModel)
+            })
+    }
+    
+    private func updateUI(_ viewModel: PhotoViewModel) {
         imageView.hero.id = viewModel.getTitle()
-        
         if let url = viewModel.getImageURL() {
             indicatorView.startAnimating()
             imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "photo")) { [weak self] result in
@@ -42,5 +54,21 @@ class PhotoDetailViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func addSwipeGestures() {
+        imageView.isUserInteractionEnabled = true
+        
+        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        leftSwipeGesture.direction = .left
+        imageView.addGestureRecognizer(leftSwipeGesture)
+        
+        let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        rightSwipeGesture.direction = .right
+        imageView.addGestureRecognizer(rightSwipeGesture)
+    }
+    
+    @objc private func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        viewModel.swipe(gesture.direction)
     }
 }
