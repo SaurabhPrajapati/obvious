@@ -15,6 +15,9 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
     
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var explanationLabel: UILabel!
+    
     private let viewModel: PhotoDetailViewModel
     private var photoCancellable: AnyCancellable?
     
@@ -30,9 +33,30 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.hero.isEnabled = true
+        if let vm = viewModel.photoModel {
+            updateUI(vm)
+        }
+        
+        animations()
         setupListener()
         addSwipeGestures()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.backButtonDisplayMode = .minimal
+    }
+    
+    private func animations() {
+        hero.isEnabled = true
+        imageView.hero.isEnabled = true
+        imageView.hero.modifiers = [.fade, .scale()]
+        
+        titleLabel.hero.isEnabled = true
+        titleLabel.heroModifiers = [.translate(), .fade, .useGlobalCoordinateSpace]
+        
+        explanationLabel.hero.isEnabled = true
+        explanationLabel.heroModifiers = [.translate(), .fade, .useGlobalCoordinateSpace]
     }
     
     private func setupListener() {
@@ -54,6 +78,9 @@ class PhotoDetailViewController: UIViewController {
                 }
             }
         }
+        
+        titleLabel.text = viewModel.getTitle()
+        explanationLabel.text = viewModel.getExplanationText()
     }
     
     private func addSwipeGestures() {

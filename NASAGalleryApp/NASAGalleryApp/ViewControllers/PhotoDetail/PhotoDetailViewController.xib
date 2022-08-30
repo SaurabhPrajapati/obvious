@@ -9,8 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController" customModule="NASAGalleryApp" customModuleProvider="target">
             <connections>
+                <outlet property="explanationLabel" destination="Cao-Ve-UIa" id="JFK-hP-yz4"/>
                 <outlet property="imageView" destination="IzX-sU-H44" id="2Rh-9G-Ei3"/>
                 <outlet property="indicatorView" destination="sd0-QC-0fZ" id="3c1-Xr-GXg"/>
+                <outlet property="titleLabel" destination="h1m-Jx-Woe" id="tK6-oa-BQ1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,22 +22,42 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-sU-H44">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sd0-QC-0fZ">
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                     <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
+                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hvT-g0-c7Y">
+                    <rect key="frame" x="32" y="646" width="350" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1m-Jx-Woe" userLabel="Title Label">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cao-Ve-UIa" userLabel="Description Label">
+                            <rect key="frame" x="0.0" y="183" width="350" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hvT-g0-c7Y" secondAttribute="bottom" constant="16" id="41i-di-1dB"/>
                 <constraint firstItem="sd0-QC-0fZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FfS-Y6-Na0"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IzX-sU-H44" secondAttribute="trailing" id="GWH-Ta-9An"/>
-                <constraint firstItem="IzX-sU-H44" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aNI-qu-taa"/>
+                <constraint firstItem="IzX-sU-H44" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="S4n-bJ-7Ee"/>
+                <constraint firstAttribute="bottom" secondItem="IzX-sU-H44" secondAttribute="bottom" id="S80-NS-uYm"/>
+                <constraint firstItem="IzX-sU-H44" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SN4-Np-pSa"/>
+                <constraint firstItem="hvT-g0-c7Y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="adH-WW-YeL"/>
+                <constraint firstItem="IzX-sU-H44" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eRF-KK-xY8"/>
                 <constraint firstItem="sd0-QC-0fZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gNn-4u-1UP"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IzX-sU-H44" secondAttribute="bottom" id="hHo-uu-PFe"/>
-                <constraint firstItem="IzX-sU-H44" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rDB-8Q-XpD"/>
+                <constraint firstItem="hvT-g0-c7Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="zoo-6Q-kbU"/>
             </constraints>
             <point key="canvasLocation" x="132" y="65"/>
         </view>

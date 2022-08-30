@@ -25,6 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func configure(window: UIWindow) {
+        setupNavigationBar()
+        
         let viewModel = PhotoListViewModel()
         let rootViewController = PhotoListViewController(viewModel: viewModel)
         let navigationController = createNavigationController()
@@ -39,7 +41,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         navigationController.hero.isEnabled = true
         navigationController.hero.navigationAnimationType = .auto
+        navigationController.navigationBar.tintColor = .white
+        navigationController.navigationBar.isTranslucent = true
         return navigationController
+    }
+    
+    private func setupNavigationBar() {
+        let arrow = UIImage(systemName: "arrow.left")?.withTintColor(UIColor.white, renderingMode: .alwaysTemplate)
+        let appearance = UINavigationBarAppearance()
+        appearance.setBackIndicatorImage(arrow, transitionMaskImage: arrow)
+        appearance.configureWithTransparentBackground()
+        appearance.shadowColor = nil
+        appearance.shadowImage = nil
+        appearance.backgroundColor = .clear
+        
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().compactScrollEdgeAppearance = appearance
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

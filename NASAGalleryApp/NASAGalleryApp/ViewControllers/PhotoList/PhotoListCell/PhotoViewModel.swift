@@ -28,4 +28,6 @@ class PhotoViewModel {
     }
     
     func getTitle() -> String? { photo?.title }
+    
+    func getExplanationText() -> String? { photo?.explanation }
 }
