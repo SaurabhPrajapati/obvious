@@ -11,7 +11,7 @@ import UIKit
 
 class PhotoDetailViewModel {
     private let photos: [Photo]?
-    private var selectedIndex: Int
+    private(set) var selectedIndex: Int
     
     @Published private(set) var photoModel: PhotoViewModel?
     

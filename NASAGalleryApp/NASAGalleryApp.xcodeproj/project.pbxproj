@@ -31,6 +31,7 @@
 		AC5AAC0728BDC6A2006D7A52 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AAC0628BDC6A2006D7A52 /* Reusable.swift */; };
 		AC5AAC0A28BDC829006D7A52 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = AC5AAC0928BDC829006D7A52 /* Hero */; };
 		AC8F45EB28BE6CB200C9BAAB /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8F45EA28BE6CB200C9BAAB /* PhotoDetailViewModel.swift */; };
+		AC8F45ED28BE7C3C00C9BAAB /* PhotoDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8F45EC28BE7C3C00C9BAAB /* PhotoDetailTests.swift */; };
 		ACF1133328BDD21D001505F0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACF1133228BDD21D001505F0 /* Kingfisher */; };
 		ACF1133528BDD545001505F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1133428BDD545001505F0 /* Utils.swift */; };
 		ACF1133928BDD859001505F0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1133728BDD859001505F0 /* PhotoDetailViewController.swift */; };
@@ -82,6 +83,7 @@
 		AC5AAC0428BDC64F006D7A52 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		AC5AAC0628BDC6A2006D7A52 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		AC8F45EA28BE6CB200C9BAAB /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
+		AC8F45EC28BE7C3C00C9BAAB /* PhotoDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailTests.swift; sourceTree = "<group>"; };
 		ACF1133428BDD545001505F0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		ACF1133728BDD859001505F0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		ACF1133828BDD859001505F0 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				AC313CF128B887250037DF72 /* NASAGalleryAppTests.swift */,
 				AC313D1928B891430037DF72 /* PhotoListTests.swift */,
+				AC8F45EC28BE7C3C00C9BAAB /* PhotoDetailTests.swift */,
 			);
 			path = NASAGalleryAppTests;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8F45ED28BE7C3C00C9BAAB /* PhotoDetailTests.swift in Sources */,
 				AC313D1A28B891430037DF72 /* PhotoListTests.swift in Sources */,
 				AC313CF228B887250037DF72 /* NASAGalleryAppTests.swift in Sources */,
 			);
