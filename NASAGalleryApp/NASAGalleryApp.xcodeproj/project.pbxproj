@@ -29,6 +29,7 @@
 		AC5AAC0328BDC5F2006D7A52 /* PhotoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC5AAC0128BDC5F2006D7A52 /* PhotoListCell.xib */; };
 		AC5AAC0528BDC64F006D7A52 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AAC0428BDC64F006D7A52 /* PhotoViewModel.swift */; };
 		AC5AAC0728BDC6A2006D7A52 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AAC0628BDC6A2006D7A52 /* Reusable.swift */; };
+		AC5AAC0A28BDC829006D7A52 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = AC5AAC0928BDC829006D7A52 /* Hero */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5AAC0A28BDC829006D7A52 /* Hero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +256,9 @@
 			dependencies = (
 			);
 			name = NASAGalleryApp;
+			packageProductDependencies = (
+				AC5AAC0928BDC829006D7A52 /* Hero */,
+			);
 			productName = NASAGalleryApp;
 			productReference = AC313CD728B887230037DF72 /* NASAGalleryApp.app */;
 			productType = "com.apple.product-type.application";
@@ -326,6 +331,9 @@
 				Base,
 			);
 			mainGroup = AC313CCE28B887230037DF72;
+			packageReferences = (
+				AC5AAC0828BDC829006D7A52 /* XCRemoteSwiftPackageReference "Hero" */,
+			);
 			productRefGroup = AC313CD828B887230037DF72 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -712,6 +720,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC5AAC0828BDC829006D7A52 /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC5AAC0928BDC829006D7A52 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC5AAC0828BDC829006D7A52 /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC313CCF28B887230037DF72 /* Project object */;
 }
